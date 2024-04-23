@@ -1,8 +1,8 @@
 import Tonic from '@socketsupply/tonic'
-import { Components } from '../../'
-import { html } from '../util'
+import { Components } from '../../index.js'
+import { html } from '../util.js'
 
-import './test-form'
+import './test-form.js'
 
 window.promiseCounter = 0
 const OldPromise = window.Promise

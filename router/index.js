@@ -159,10 +159,10 @@ TonicRouter.matcher = (() => {
       tokens.push({
         name: name || key++,
         prefix: prev,
-        delimiter: delimiter,
-        optional: optional,
-        repeat: repeat,
-        partial: partial,
+        delimiter,
+        optional,
+        repeat,
+        partial,
         pattern: pattern ? escapeGroup(pattern) : '[^' + escapeString(delimiter) + ']+?'
       })
     }

@@ -1,4 +1,4 @@
-import { TonicDialog } from '../dialog'
+import { TonicDialog } from '../dialog/index.js'
 
 export class TonicPanel extends TonicDialog {
   constructor () {

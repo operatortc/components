@@ -273,7 +273,7 @@ export class Windowed extends Tonic {
     }
 
     outer.scrollTop = scrollTop
-    this.rePaint({ fromScroll: true, scrollTop: scrollTop })
+    this.rePaint({ fromScroll: true, scrollTop })
   }
 
   createNewPage () {
@@ -504,7 +504,7 @@ export class Windowed extends Tonic {
     if (outer) {
       outer.addEventListener('scroll', () => {
         const scrollTop = this.state.scrollTop = outer.scrollTop
-        this.rePaint({ fromScroll: true, scrollTop: scrollTop })
+        this.rePaint({ fromScroll: true, scrollTop })
       }, { passive: true })
       outer.__hasWindowedScrollListener = true
     }

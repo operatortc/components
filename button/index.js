@@ -213,8 +213,8 @@ export class TonicButton extends Tonic {
       button: {
         width,
         height,
-        borderRadius: radius,
-        borderWidth: borderWidth
+        borderWidth,
+        borderRadius: radius
       },
       wrapper: {
         width,

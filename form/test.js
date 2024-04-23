@@ -1,10 +1,10 @@
 import { test } from 'tapzero'
 import { qs } from 'qsa-min'
 
-import { html } from '../_test/util'
+import { html } from '../_test/util.js'
 import { Tonic } from '@socketsupply/tonic'
-import { TonicForm } from '.'
-import { Components } from '..'
+import { TonicForm } from './index.js'
+import { Components } from '../index.js'
 
 Components(Tonic)
 
