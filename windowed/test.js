@@ -1,4 +1,4 @@
-import { html } from '../_test/util'
+import { html } from '../_test/util.js'
 
 document.body.appendChild(html`
 <section id="windowed">

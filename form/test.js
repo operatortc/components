@@ -1,7 +1,6 @@
-import { test } from 'tapzero'
-import { qs } from 'qsa-min'
+import { test } from 'socket:test'
+import { html, qs } from '../_test/util.js'
 
-import { html } from '../_test/util.js'
 import { Tonic } from '@socketsupply/tonic'
 import { TonicForm } from './index.js'
 import { Components } from '../index.js'

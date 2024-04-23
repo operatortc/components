@@ -1,10 +1,10 @@
-import { test } from 'tapzero'
-import { qs } from 'qsa-min'
+import { test } from 'socket:test'
+import { html, qs } from '../_test/util.js'
 
-import { html } from '../_test/util'
 import { Components } from '..'
 import { RelativeTime } from '.'
 import { Tonic } from '@socketsupply/tonic'
+
 Components(Tonic)
 
 const NOW_MINUS_5 = new Date()
