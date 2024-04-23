@@ -1,5 +1,5 @@
-import { test } from 'socket:test'
 import { html } from '../_test/util.js'
+import { Tonic } from '@socketsupply/tonic'
 
 import { Components } from '..'
 

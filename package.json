@@ -32,10 +32,6 @@
   "devDependencies": {
     "@socketsupply/tonic": "15.0.0",
     "standard": "16.0.4",
-    "tape-run": "9.0.0",
-    "chart.js": "^2.9.2",
-    "esbuild": "0.13.8",
-    "qsa-min": "1.0.2",
-    "tapzero": "^0.6.0"
+    "chart.js": "^2.9.2"
   }
 }
