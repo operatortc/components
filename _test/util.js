@@ -24,5 +24,7 @@ export function html ([str, ...strings], ...values) {
   return comp
 }
 
-export const qs = (s, p) => (p || document).querySelector(s)
-export const qsa = (s, p) => [...(p || document).querySelectorAll(s)]
+const qs = (s, p) => (p || document).querySelector(s)
+const qsa = (s, p) => [...(p || document).querySelectorAll(s)]
+
+export { qs, qsa }
