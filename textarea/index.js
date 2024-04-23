@@ -142,8 +142,8 @@ export class TonicTextarea extends Tonic {
       textarea: {
         width,
         height,
-        borderRadius: radius,
-        resize: resize
+        resize,
+        borderRadius: radius
       }
     }
   }

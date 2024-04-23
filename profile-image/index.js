@@ -91,7 +91,7 @@ export class TonicProfileImage extends Tonic {
       wrapper: {
         width: size,
         height: size,
-        border: border,
+        border,
         borderRadius: radius
       }
     }
