@@ -9,7 +9,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "20.x"
 
       - name: Install
         run: |
@@ -19,5 +19,4 @@ jobs:
 
       - name: Test
         run: |
-          sudo apt-get install xvfb
-          xvfb-run --auto-servernum npm run test:ci
+          npm run test
