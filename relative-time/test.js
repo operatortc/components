@@ -1,8 +1,8 @@
 import { test } from 'socket:test'
 import { html, qs } from '../_test/util.js'
 
-import { Components } from '..'
-import { RelativeTime } from '.'
+import { Components } from '../index.js'
+import { RelativeTime } from './index.js'
 import { Tonic } from '@socketsupply/tonic'
 
 Components(Tonic)

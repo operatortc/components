@@ -42,7 +42,7 @@ Components.Tonic = Tonic
 //
 // An example collection of components.
 //
-export function Components (Tonic) {
+function Components (Tonic) {
   if (once) {
     return
   }
@@ -83,4 +83,5 @@ export function Components (Tonic) {
   Tonic.add(TonicToggle, 'tonic-toggle')
 }
 
+export { Components }
 export default Components

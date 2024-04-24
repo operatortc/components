@@ -2,7 +2,7 @@ import { test } from 'socket:test'
 import { html, qs } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 
@@ -81,18 +81,18 @@ panelPositionButton.addEventListener('click', e => panelPosition.show())
 
 test('opening a panel', async t => {
   const container = qs('#example-panel-default')
-  const overlay = qs('.tonic--overlay')
+  const overlay = qs('.tonic--dialog--overlay')
   const main = qs('main', container)
   const h3 = qs('h3', main)
 
-  t.ok(container)
-  t.ok(overlay)
-  t.ok(main)
-  t.ok(h3)
+  t.ok(container, 'container created')
+  t.ok(overlay, 'overlay created')
+  t.ok(main, 'main found')
+  t.ok(h3, 'h3 found')
 
-  t.equal(h3.textContent.trim(), 'Hello')
+  t.equal(h3.textContent.trim(), 'Hello', 'should contain "Hello"')
 
-  t.ok(container.hasAttribute('hidden'))
+  t.ok(container.hasAttribute('hidden'), 'should be hidden')
 
   await container.show()
 
@@ -100,5 +100,5 @@ test('opening a panel', async t => {
 
   await container.hide()
 
-  t.ok(container.hasAttribute('hidden'))
+  t.ok(container.hasAttribute('hidden'), 'container is hidden')
 })

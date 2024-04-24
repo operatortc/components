@@ -248,7 +248,11 @@ export class TonicToaster extends Tonic {
 
   destroy (el) {
     el.classList.remove('tonic--show')
+    const timeout = setTimeout(() => {
+      el.parentNode.removeChild(el)
+    }, 128)
     el.addEventListener('transitionend', e => {
+      clearTimeout(timeout)
       if (el && el.parentNode) {
         el.parentNode.removeChild(el)
       }

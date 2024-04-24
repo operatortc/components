@@ -112,13 +112,17 @@ export class TonicPopover extends Tonic {
     }
   }
 
-  show (triggerNode) {
+  show () {
+    const triggerNode = document.querySelector(`#${this.props.for}`)
     const popover = this.querySelector('.tonic--popover')
     let scrollableArea = triggerNode.parentNode
 
     while (true) {
       if (!scrollableArea || scrollableArea.tagName === 'BODY') break
-      if (window.getComputedStyle(scrollableArea).overflow === 'scroll') break
+
+      const overflow = window.getComputedStyle(scrollableArea).overflow
+      if (['scroll', 'scroll-x', 'scroll-y', 'auto'].includes(overflow)) break
+
       scrollableArea = scrollableArea.parentNode
     }
 
@@ -147,7 +151,7 @@ export class TonicPopover extends Tonic {
         left += triggerNode.offsetWidth - popover.offsetWidth
         break
       case 'bottom':
-        pos += triggerNode.offsetHeight + margin
+        pos += triggerNode.parentNodeNode.offsetHeight + margin
         left += (triggerNode.offsetWidth / 2) - (popover.offsetWidth / 2)
         break
     }
@@ -155,11 +159,9 @@ export class TonicPopover extends Tonic {
     popover.style.top = `${pos}px`
     popover.style.left = `${left}px`
 
-    window.requestAnimationFrame(() => {
-      popover.className = `tonic--popover tonic--show tonic--popover--${this.props.position}`
-      const event = new window.Event('show')
-      this.dispatchEvent(event)
-    })
+    popover.className = `tonic--popover tonic--show tonic--popover--${this.props.position}`
+    const event = new window.Event('show')
+    this.dispatchEvent(event)
   }
 
   hide () {

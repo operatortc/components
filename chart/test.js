@@ -3,7 +3,7 @@ import { html, qs } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
 import chart from 'chart.js'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 

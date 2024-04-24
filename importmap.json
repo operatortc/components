@@ -1,5 +1,6 @@
 {
   "imports": {
-    "@socketsupply/tonic": "npm:@socketsupply/tonic"
+    "@socketsupply/tonic": "npm:@socketsupply/tonic",
+    "chart.js": "npm:chart.js"
   }
 }
