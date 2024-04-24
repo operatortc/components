@@ -2,7 +2,7 @@ import { test } from 'socket:test'
 import { html, qs } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 

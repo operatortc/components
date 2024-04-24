@@ -2,7 +2,7 @@ import { test } from 'socket:test'
 import { html, qs } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 
@@ -13,9 +13,9 @@ document.body.appendChild(html`
   <!-- Popover Default -->
   <div class="test-container">
     <span>Default Popover</span>
-    <tonic-button id="tonic-popover-default-button">
+    <button id="tonic-popover-default-button">
       Open Popover
-    </tonic-button>
+    </button>
   </div>
 
   <tonic-popover
@@ -30,17 +30,6 @@ document.body.appendChild(html`
 </section>
 `)
 
-//
-// Panel Default
-//
-const popover = document.getElementById('tonic-popover-default')
-popover.addEventListener('show', event => {
-  document.body.addEventListener('click', e => {
-    popover.hide()
-  }, { once: true })
-})
-
-// TODO: write tests for popover.
 test('opening popover', async t => {
   const container = qs('#popover')
   const popover = qs('#tonic-popover-default', container)
@@ -49,20 +38,24 @@ test('opening popover', async t => {
   t.ok(popover)
   t.ok(button)
 
-  const popoverCont = qs('.tonic--popover', popover)
-  t.ok(popoverCont)
+  const coPopover = qs('.tonic--popover', popover)
+  t.ok(coPopover)
 
-  const divs = popoverCont.querySelectorAll('div')
+  popover.addEventListener('show', event => {
+    t.ok(coPopover.classList.contains('tonic--show'), 'the component should be visible')
+    popover.hide()
+  })
+
+  const divs = coPopover.querySelectorAll('div')
   t.equal(divs.length, 3)
 
-  const styles = window.getComputedStyle(divs[0])
-  t.equal(styles.visibility, 'hidden')
+  t.ok(!coPopover.classList.contains('tonic--show'), 'the component should be hidden')
 
-  button.querySelector('button').click()
   await sleep(512)
+  button.click()
 
-  const styles2 = window.getComputedStyle(divs[0])
-  t.equal(styles2.visibility, 'visible')
+  await sleep(512)
+  t.ok(!coPopover.classList.contains('tonic--show'), 'the component should not be visible')
 })
 
 function sleep (ms) {

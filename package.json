@@ -1,15 +1,11 @@
 {
   "name": "@socketsupply/components",
-  "version": "14.0.13",
+  "version": "14.1.0",
   "description": "Example components",
   "type": "module",
   "scripts": {
-    "prepare": "npm run lint",
-    "prepublishOnly": "git push --follow-tags",
     "lint": "standard -v",
-    "test": "standard && esbuild --format=esm --bundle _test/index.js | tape-run",
-    "test:ci": "esbuild --format=esm --bundle _test/index.js | tape-run",
-    "test:open": "esbuild --format=esm --bundle _test/index.js | tape-run --browser chrome --keep-open",
+    "test": "npm run lint && ssc build -r",
     "pub": "npm pub && npm publish --registry https://npm.pkg.github.com"
   },
   "repository": {
@@ -30,8 +26,9 @@
   },
   "homepage": "https://github.com/socketsupply/components#readme",
   "devDependencies": {
+    "@socketsupply/socket": "github:socketsupply/socket#next",
     "@socketsupply/tonic": "15.0.0",
-    "standard": "16.0.4",
-    "chart.js": "^2.9.2"
+    "chart.js": "^2.9.2",
+    "standard": "16.0.4"
   }
 }

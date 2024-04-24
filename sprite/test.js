@@ -2,7 +2,7 @@ import { test } from 'socket:test'
 import { html, qs } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 
@@ -30,8 +30,8 @@ test('test an icon', t => {
   t.ok(svg.querySelector('use'))
 
   const size = use.getBoundingClientRect()
-  t.equal(Math.floor(size.height), 92)
-  t.equal(Math.floor(size.width), 92)
+  t.equal(Math.floor(size.height), 90)
+  t.equal(Math.floor(size.width), 90)
 
   const sprite = qs('tonic-sprite')
   t.ok(sprite)

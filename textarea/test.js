@@ -1,7 +1,7 @@
 import { html } from '../_test/util.js'
 
 import { Tonic } from '@socketsupply/tonic'
-import { Components } from '..'
+import { Components } from '../index.js'
 
 Components(Tonic)
 
